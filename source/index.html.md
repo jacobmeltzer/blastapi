@@ -34,16 +34,16 @@ curl "http://24b3f761.ngrok.io/api/incoming"
   -u username:key
 ```
 
-> Make sure to replace `username` with your username and 'token' with your API key.
+> Make sure to replace `username` with your username and `token` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Blast uses API keys to allow access to the API. You can register a new API key by creating an account in our [portal](http://24b3f761.ngrok.io/register).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Blast expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: Basic encodedKey`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>encodedKey</code> with your encoded key.
 </aside>
 
 # Kittens
