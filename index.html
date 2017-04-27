@@ -1198,6 +1198,46 @@ You must replace <code>encodedKey</code> with your encoded key.
 </tr>
 </tbody></table>
 
+          <h1 id="webhooks">WebHooks</h1>
+
+<p>Incoming campaigns allow WebHooks to be added. If a WebHook is enabled for an incoming campaign, our server will send a POST request to your server at the time of receipt:</p>
+
+<h2 id="post-parameters">POST Parameters</h2>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from</td>
+<td>Contains the phone number this message came from</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Contains the message the user has sent</td>
+</tr>
+</tbody></table>
+
+<h2 id="use-cases">Use Cases</h2>
+
+<ol>
+<li>Generate coupons using a POS system or eCommerce API. </li>
+<li>Send different responses depending on time of day, number of messages recieved, or number of times a specific user has sent you a message.</li>
+</ol>
+
+<h2 id="response">Response</h2>
+
+<p>The entire body of the response will be used to respond to the text message.</p>
+<pre class="highlight php tab-php"><code>header('Content-Type: application/json');
+date_default_timezone_set('America/New_York');
+
+$from = $_POST['from'];
+$message = $_POST['message'];
+
+echo "Hey ".$from." here's a dynamic message! You sent me a message saying '".$message."' and the current date is ".date("h:i:sa");
+</code></pre>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
