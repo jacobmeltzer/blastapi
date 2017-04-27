@@ -662,6 +662,123 @@ You must replace <code>encodedKey</code> with your encoded key.
 </tr>
 </tbody></table>
 
+<h2 id="create-incoming-campaign">Create Incoming Campaign</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/incoming/create"</span> 
+    -u username:key 
+    --data-urlencode <span class="s2">"phone=+15103067053"</span> 
+    --data-urlencode <span class="s2">"keyword=TEST5"</span> 
+    --data-urlencode <span class="s2">"response=I am sending a response"</span> 
+    --data-urlencode <span class="s2">"list=5"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"error"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Your campaign has been created!"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"campaign"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accountId"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2017</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"month"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"dayOfMonth"</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"hourOfDay"</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"minute"</span><span class="p">:</span><span class="mi">58</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"second"</span><span class="p">:</span><span class="mi">42</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"keyword"</span><span class="p">:</span><span class="s2">"TEST5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"list"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Yet Another Contact List"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">  
+            </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2017</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"month"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dayOfMonth"</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hourOfDay"</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minute"</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"second"</span><span class="p">:</span><span class="mi">58</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="s2">"contacts"</span><span class="p">:[</span><span class="w">  
+            </span><span class="p">{</span><span class="w">  
+               </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"phoneNumber"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"rawNumber"</span><span class="p">:</span><span class="s2">"+14435401295"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2017</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"month"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"dayOfMonth"</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"hourOfDay"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"minute"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"second"</span><span class="p">:</span><span class="mi">11</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"address"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"street"</span><span class="p">:</span><span class="s2">"Willowcrest Cir"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"Baltimore"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"state"</span><span class="p">:</span><span class="s2">"MD"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="s2">"21209"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"United States"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"ageRange"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"lowerBound"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="s2">"upperBound"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="s2">"incomeRange"</span><span class="p">:{</span><span class="w">  
+                  </span><span class="s2">"lowerBound"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">60000</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="s2">"upperBound"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">80000</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"response"</span><span class="p">:</span><span class="s2">"I am sending a response"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phoneNumber"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"rawNumber"</span><span class="p">:</span><span class="s2">"+15103067053"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"webHook"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://24b3f761.ngrok.io/api/incoming/create</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>phone</td>
+<td>The phone number the incoming campaign should work on, including international code.</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>The keyword to use for the incoming campaign.</td>
+</tr>
+<tr>
+<td>response</td>
+<td>The response to send when no WebHook exists, or when the WebHook fails</td>
+</tr>
+<tr>
+<td>webhook</td>
+<td>The URL WebHook to use.</td>
+</tr>
+</tbody></table>
+
 <h2 id="delete-incoming-campaign">Delete Incoming Campaign</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/incoming/delete"</span>
   -u username:key
@@ -1073,7 +1190,7 @@ You must replace <code>encodedKey</code> with your encoded key.
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
+<td>Not Found &ndash; The specified page could not be found</td>
 </tr>
 <tr>
 <td>500</td>
