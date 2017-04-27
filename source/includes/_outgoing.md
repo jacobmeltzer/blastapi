@@ -116,93 +116,77 @@ curl "http://24b3f761.ngrok.io/api/outgoing/<ID>"
    "error":"",
    "message":"",
    "campaign":{  
-      "id":4,
+      "id":30,
       "date":{  
          "year":2017,
          "month":3,
          "dayOfMonth":26,
-         "hourOfDay":20,
-         "minute":5,
-         "second":4
+         "hourOfDay":22,
+         "minute":39,
+         "second":18
       },
-      "name":"Some Outgoing Campaign",
-      "message":"Enjoy another outgoing campaign!",
-      "lists":[  
-         {  
-            "id":5,
-            "name":"Yet Another Contact List",
-            "date":{  
-               "year":2017,
-               "month":3,
-               "dayOfMonth":26,
-               "hourOfDay":19,
-               "minute":59,
-               "second":58
-            },
-            "contacts":[  
-               {  
-                  "id":1,
-                  "name":"John Smith",
-                  "phoneNumber":{  
-                     "rawNumber":"+14435401295"
-                  },
-                  "date":{  
-                     "year":2017,
-                     "month":3,
-                     "dayOfMonth":26,
-                     "hourOfDay":20,
-                     "minute":0,
-                     "second":11
-                  },
-                  "address":{  
-                     "street":"Willowcrest Cir",
-                     "city":"Baltimore",
-                     "state":"MD",
-                     "postalCode":"21209",
-                     "country":"United States"
-                  },
-                  "gender":"",
-                  "ageRange":{  
-                     "lowerBound":{  
-                        "endpoint":0
-                     },
-                     "upperBound":{  
-                        "endpoint":0
-                     }
-                  },
-                  "incomeRange":{  
-                     "lowerBound":{  
-                        "endpoint":60000
-                     },
-                     "upperBound":{  
-                        "endpoint":80000
-                     }
-                  }
-               }
-            ]
-         }
-      ],
+      "name":"New campaign",
+      "message":"new message",
       "states":[  
-         "RI"
+         "",
+         "MD"
       ],
       "ageRange":{  
          "lowerBound":{  
-            "endpoint":30
+            "endpoint":0
          },
          "upperBound":{  
-            "endpoint":50
+            "endpoint":0
          }
       },
       "incomeRange":{  
          "lowerBound":{  
-            "endpoint":35458
+            "endpoint":0
          },
          "upperBound":{  
-            "endpoint":75853
+            "endpoint":0
          }
       },
       "contacts":[  
-
+         {  
+            "id":1,
+            "name":"John Smith",
+            "phoneNumber":{  
+               "rawNumber":"+14435401295"
+            },
+            "date":{  
+               "year":2017,
+               "month":3,
+               "dayOfMonth":26,
+               "hourOfDay":20,
+               "minute":0,
+               "second":11
+            },
+            "address":{  
+               "street":"Willowcrest Cir",
+               "city":"Baltimore",
+               "state":"MD",
+               "postalCode":"21209",
+               "country":"United States"
+            },
+            "gender":"",
+            "ageRange":{  
+               "lowerBound":{  
+                  "endpoint":0
+               },
+               "upperBound":{  
+                  "endpoint":0
+               }
+            },
+            "incomeRange":{  
+               "lowerBound":{  
+                  "endpoint":60000
+               },
+               "upperBound":{  
+                  "endpoint":80000
+               }
+            }
+         }
       ]
    }
 }
@@ -243,96 +227,41 @@ curl "http://24b3f761.ngrok.io/api/outgoing/create"
 > The above command returns JSON structured like this:
 
 ```json
-{
+{  
    "error":"",
-   "id":27,
-   "campaign":{
-      "id":27,
-      "date":{
+   "id":33,
+   "campaign":{  
+      "id":33,
+      "date":{  
          "year":2017,
          "month":3,
          "dayOfMonth":26,
-         "hourOfDay":21,
-         "minute":41,
-         "second":13
+         "hourOfDay":22,
+         "minute":57,
+         "second":9
       },
       "name":"Campaign Name",
       "message":"Just a test message",
-      "lists":[
-         {
-            "id":5,
-            "name":"Yet Another Contact List",
-            "date":{
-               "year":2017,
-               "month":3,
-               "dayOfMonth":26,
-               "hourOfDay":19,
-               "minute":59,
-               "second":58
-            },
-            "contacts":[
-               {
-                  "id":1,
-                  "name":"John Smith",
-                  "phoneNumber":{
-                     "rawNumber":"+14435401295"
-                  },
-                  "date":{
-                     "year":2017,
-                     "month":3,
-                     "dayOfMonth":26,
-                     "hourOfDay":20,
-                     "minute":0,
-                     "second":11
-                  },
-                  "address":{
-                     "street":"Willowcrest Cir",
-                     "city":"Baltimore",
-                     "state":"MD",
-                     "postalCode":"21209",
-                     "country":"United States"
-                  },
-                  "gender":"",
-                  "ageRange":{
-                     "lowerBound":{
-                        "endpoint":0
-                     },
-                     "upperBound":{
-                        "endpoint":0
-                     }
-                  },
-                  "incomeRange":{
-                     "lowerBound":{
-                        "endpoint":60000
-                     },
-                     "upperBound":{
-                        "endpoint":80000
-                     }
-                  }
-               }
-            ]
-         }
-      ],
-      "states":[
+      "states":[  
          "CA"
       ],
-      "ageRange":{
-         "lowerBound":{
+      "ageRange":{  
+         "lowerBound":{  
             "endpoint":20
          },
-         "upperBound":{
+         "upperBound":{  
             "endpoint":40
          }
       },
-      "incomeRange":{
-         "lowerBound":{
+      "incomeRange":{  
+         "lowerBound":{  
             "endpoint":0
          },
-         "upperBound":{
+         "upperBound":{  
             "endpoint":50000
          }
       },
-      "contacts":[
+      "contacts":[  
 
       ]
    }
