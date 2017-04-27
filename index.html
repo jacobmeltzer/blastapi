@@ -429,6 +429,39 @@ You must replace <code>encodedKey</code> with your encoded key.
 </tr>
 </tbody></table>
 
+<h2 id="delete-list">Delete List</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/lists/delete"</span>
+  -u username:key
+  -d <span class="s2">"id=6"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"error"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"You have succesfully deleted a list."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This deletes a contacts list within your account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://24b3f761.ngrok.io/api/lists/delete</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The id of the contacts list to delete</td>
+</tr>
+</tbody></table>
+
           <h1 id="outgoing-campaigns">Outgoing Campaigns</h1>
 
 <p>The Blast API allows developers to get and send outgoing campaigns. Outgoing campaigns can be used to send targeted text messages to different lists and demographics. We currently support filtering by state, income range, age range, and contact list.</p>
