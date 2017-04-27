@@ -123,3 +123,46 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the contacts list to retrieve.
 
+## Create List
+
+```shell
+curl "http://24b3f761.ngrok.io/api/lists/create"
+  -u username:key
+  -d "name=Some list"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+   "error":"",
+   "message":"Your contact list has been created!",
+   "list":{  
+      "id":6,
+      "name":"Some list",
+      "date":{  
+         "year":2017,
+         "month":3,
+         "dayOfMonth":26,
+         "hourOfDay":22,
+         "minute":15,
+         "second":51
+      },
+      "contacts":[  
+
+      ]
+   }
+}
+```
+
+This creates a new contacts list within your account.
+
+### HTTP Request
+
+`POST http://24b3f761.ngrok.io/api/lists/create`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+name | The name of the new contacts list
