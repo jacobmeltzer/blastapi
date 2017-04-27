@@ -12,44 +12,80 @@ curl "http://24b3f761.ngrok.io/api/outgoing"
 > The above command returns JSON structured like this:
 
 ```json
-{
-   "campaigns":[
-      {
-         "id":4,
-         "date":{
+{  
+   "campaigns":[  
+      {  
+         "id":30,
+         "date":{  
             "year":2017,
             "month":3,
             "dayOfMonth":26,
-            "hourOfDay":20,
-            "minute":5,
-            "second":4
+            "hourOfDay":22,
+            "minute":39,
+            "second":18
          },
-         "name":"Some Outgoing Campaign",
-         "message":"Enjoy another outgoing campaign!",
-         "lists":[
-
+         "name":"New campaign",
+         "message":"new message",
+         "states":[  
+            "",
+            "MD"
          ],
-         "states":[
-
-         ],
-         "ageRange":{
-            "lowerBound":{
-               "endpoint":30
+         "ageRange":{  
+            "lowerBound":{  
+               "endpoint":0
             },
-            "upperBound":{
-               "endpoint":50
+            "upperBound":{  
+               "endpoint":0
             }
          },
-         "incomeRange":{
-            "lowerBound":{
-               "endpoint":35458
+         "incomeRange":{  
+            "lowerBound":{  
+               "endpoint":0
             },
-            "upperBound":{
-               "endpoint":75853
+            "upperBound":{  
+               "endpoint":0
             }
          },
-         "contacts":[
-
+         "contacts":[  
+            {  
+               "id":1,
+               "name":"John Smith",
+               "phoneNumber":{  
+                  "rawNumber":"+14435401295"
+               },
+               "date":{  
+                  "year":2017,
+                  "month":3,
+                  "dayOfMonth":26,
+                  "hourOfDay":20,
+                  "minute":0,
+                  "second":11
+               },
+               "address":{  
+                  "street":"Willowcrest Cir",
+                  "city":"Baltimore",
+                  "state":"MD",
+                  "postalCode":"21209",
+                  "country":"United States"
+               },
+               "gender":"",
+               "ageRange":{  
+                  "lowerBound":{  
+                     "endpoint":0
+                  },
+                  "upperBound":{  
+                     "endpoint":0
+                  }
+               },
+               "incomeRange":{  
+                  "lowerBound":{  
+                     "endpoint":60000
+                  },
+                  "upperBound":{  
+                     "endpoint":80000
+                  }
+               }
+            }
          ]
       }
    ]
