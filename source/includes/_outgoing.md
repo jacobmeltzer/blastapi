@@ -210,11 +210,6 @@ This creates an outgoing campaign within an account.
 
 ### Query Parameters
 
-postParameters = {name: $("#name").val(), message : $("#message").val(), states :  $("#states").val(),
-              ageFilter : $("#ageFilter").is(':checked'), ageMin : ageRes.from, ageMax :ageRes.to,
-              incomeFilter : $("#incomeFilter").is(':checked'), incomeMin : incomeRes.from, 
-              incomeMax : incomeRes.to, lists : $("#lists").val(), sms : false, timestamp: timestamp};
-
 Parameter | Description
 --------- | -----------
 name | The name of the outgoing campaign.
@@ -229,4 +224,43 @@ incomeMax | Maximum income to send to. Ignored if filtering is false.
 lists | Comma-seperated list of list IDs to send to
 sms | True if should send SMS blast, false for phone call blast.
 timestamp | UNIX timestamp representing time to send the campaign at.
+
+## Delete Outgoing Campaigns
+
+```shell
+curl "http://24b3f761.ngrok.io/api/outgoing/delete"
+  -u username:key
+  -d "name=Campaign Name&\
+      message=Just a test message&\
+      states=CA,RI&\
+      ageFilter=true&\
+      ageMin=20&\
+      ageMax=40&\
+      incomeFilter=true&\
+      incomeMin=0&\
+      incomeMax=50000&\
+      lists=5&\
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+   "error":"",
+   "message":"Your campaign has been deleted."
+}
+```
+
+This deletes an outgoing campaign within an account.
+
+### HTTP Request
+
+`POST http://24b3f761.ngrok.io/api/outgoing/delete`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+id | Contains the ID of the outgoing campaign to delete.
 
