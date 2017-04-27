@@ -201,5 +201,37 @@ This gets all an incoming campaign from the account.
 
 Parameter | Description
 --------- | -----------
-id | Contains the ID of the outgoing campaign to delete.
+id | Contains the ID of the incoming campaign to delete.
+
+
+
+## Delete Incoming Campaign
+
+
+```shell
+curl "http://24b3f761.ngrok.io/api/incoming/delete"
+  -u username:key
+  -d "id=1"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+   "error":"",
+   "message":"You have succesfully deleted a campaign."
+}
+```
+
+This deletes an incoming campaign within an account.
+
+### HTTP Request
+
+`POST http://24b3f761.ngrok.io/api/incoming/delete`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+id | Contains the ID of the incoming campaign to delete.
 
