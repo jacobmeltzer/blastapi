@@ -188,26 +188,118 @@ ID | The ID of the outgoing campaign to retrieve.
 ## Create Outgoing Campaigns
 
 ```shell
-curl "http://24b3f761.ngrok.io/api/outgoing/create"
-  -u username:key
+curl "http://24b3f761.ngrok.io/api/outgoing/create" 
+  -u username:key 
   -d "name=Campaign Name&
       message=Just a test message&
-      states=CA,RI&
+      states[]=CA&
       ageFilter=true&
       ageMin=20&
       ageMax=40&
       incomeFilter=true&
       incomeMin=0&
       incomeMax=50000&
-      lists=5&
+      lists[]=5&
+      sms=true&
+      timestamp=0"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{  
+{
    "error":"",
-   "message":"Your campaign has been created."
+   "id":27,
+   "campaign":{
+      "id":27,
+      "date":{
+         "year":2017,
+         "month":3,
+         "dayOfMonth":26,
+         "hourOfDay":21,
+         "minute":41,
+         "second":13
+      },
+      "name":"Campaign Name",
+      "message":"Just a test message",
+      "lists":[
+         {
+            "id":5,
+            "name":"Yet Another Contact List",
+            "date":{
+               "year":2017,
+               "month":3,
+               "dayOfMonth":26,
+               "hourOfDay":19,
+               "minute":59,
+               "second":58
+            },
+            "contacts":[
+               {
+                  "id":1,
+                  "name":"John Smith",
+                  "phoneNumber":{
+                     "rawNumber":"+14435401295"
+                  },
+                  "date":{
+                     "year":2017,
+                     "month":3,
+                     "dayOfMonth":26,
+                     "hourOfDay":20,
+                     "minute":0,
+                     "second":11
+                  },
+                  "address":{
+                     "street":"Willowcrest Cir",
+                     "city":"Baltimore",
+                     "state":"MD",
+                     "postalCode":"21209",
+                     "country":"United States"
+                  },
+                  "gender":"",
+                  "ageRange":{
+                     "lowerBound":{
+                        "endpoint":0
+                     },
+                     "upperBound":{
+                        "endpoint":0
+                     }
+                  },
+                  "incomeRange":{
+                     "lowerBound":{
+                        "endpoint":60000
+                     },
+                     "upperBound":{
+                        "endpoint":80000
+                     }
+                  }
+               }
+            ]
+         }
+      ],
+      "states":[
+         "CA"
+      ],
+      "ageRange":{
+         "lowerBound":{
+            "endpoint":20
+         },
+         "upperBound":{
+            "endpoint":40
+         }
+      },
+      "incomeRange":{
+         "lowerBound":{
+            "endpoint":0
+         },
+         "upperBound":{
+            "endpoint":50000
+         }
+      },
+      "contacts":[
+
+      ]
+   }
 }
 ```
 
@@ -232,7 +324,7 @@ incomeMin | Minimum income to send to. Ignored if filtering is false.
 incomeMax | Maximum income to send to. Ignored if filtering is false.
 lists | Comma-seperated list of list IDs to send to
 sms | True if should send SMS blast, false for phone call blast.
-timestamp | UNIX timestamp representing time to send the campaign at.
+timestamp | UNIX timestamp representing time to send the campaign at, or 0 for now.
 
 ## Delete Outgoing Campaigns
 
