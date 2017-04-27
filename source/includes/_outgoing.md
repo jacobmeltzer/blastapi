@@ -188,7 +188,7 @@ ID | The ID of the outgoing campaign to retrieve.
 ## Create Outgoing Campaigns
 
 ```shell
-curl "http://24b3f761.ngrok.io/api/outgoing/delete"
+curl "http://24b3f761.ngrok.io/api/outgoing/create"
   -u username:key
   -d "name=Campaign Name&
       message=Just a test message&
