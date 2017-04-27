@@ -65,10 +65,6 @@ This gets all outgoing campaigns in the account.
 ### URL Parameters
 No query parameters are required for this API call.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
 ## Get a Specific Outgoing Campaign
 
 
@@ -188,12 +184,70 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the outgoing campaign to retrieve.
 
+
+## Create Outgoing Campaigns
+
+```shell
+curl "http://24b3f761.ngrok.io/api/outgoing/create"
+  -u username:key
+  -d "id=1"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+   "error":"",
+   "message":"Your campaign has been created."
+}
+```
+
+This creates an outgoing campaign within an account.
+
+### HTTP Request
+
+`POST http://24b3f761.ngrok.io/api/outgoing/create`
+
+### Query Parameters
+
+postParameters = {name: $("#name").val(), message : $("#message").val(), states :  $("#states").val(),
+              ageFilter : $("#ageFilter").is(':checked'), ageMin : ageRes.from, ageMax :ageRes.to,
+              incomeFilter : $("#incomeFilter").is(':checked'), incomeMin : incomeRes.from, 
+              incomeMax : incomeRes.to, lists : $("#lists").val(), sms : false, timestamp: timestamp};
+
+Parameter | Description
+--------- | -----------
+name | The name of the outgoing campaign.
+message | The message to send.
+states | Comma-seperated list of state-names.
+ageFilter | Boolean value, true if should filter contacts by age.
+ageMin | Minimum age to send to. Ignored if filtering is false.
+ageMax | Maximum age to send to. Ignored if filtering is false.
+incomeFilter | Boolean value, true if should filter contacts by income.
+incomeMin | Minimum income to send to. Ignored if filtering is false.
+incomeMax | Maximum income to send to. Ignored if filtering is false.
+lists | Comma-seperated list of list IDs to send to
+sms | True if should send SMS blast, false for phone call blast.
+timestamp | UNIX timestamp representing time to send the campaign at.
+
 ## Delete Outgoing Campaigns
 
 ```shell
-curl "http://24b3f761.ngrok.io/api/outgoing"
-  -u username:key
-  -d "id=1"
+curl "http://24b3f761.ngrok.io/api/outgoing/delete"
+  -u user1:NDg0NjgwYTktMmY3ZC00N2E2LWI4ZTAtYjA4ZDEyZjAwOGNh
+  -d "name=Campaign Name&
+      message=Just a test message&
+      states=CA,RI&
+      ageFilter=true&
+      ageMin=20&
+      ageMax=40&
+      incomeFilter=true&
+      incomeMin=0&
+      incomeMax=50000&
+      lists=5&
+      sms=true&
+      timestamp=0"
+
 ```
 
 > The above command returns JSON structured like this:
