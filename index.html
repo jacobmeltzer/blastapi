@@ -462,6 +462,103 @@ You must replace <code>encodedKey</code> with your encoded key.
 </tr>
 </tbody></table>
 
+          <h1 id="incoming-campaigns">Incoming Campaigns</h1>
+
+<p>The Blast API allows developers to create, manage, and delete incoming campaigns. Incoming campaigns can be used to allow customers to text keywords to a phone number. Incoming campaigns support WebHooks to allow for dynamically generated content.</p>
+
+<h2 id="list-all-incoming-campaigns">List All Incoming Campaigns</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/incoming"</span>
+  -u username:key
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"campaigns"</span><span class="p">:[</span><span class="w">  
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"accountId"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">  
+            </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2017</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"month"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dayOfMonth"</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hourOfDay"</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minute"</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"second"</span><span class="p">:</span><span class="mi">56</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="s2">"keyword"</span><span class="p">:</span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"list"</span><span class="p">:{</span><span class="w">  
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Yet Another Contact List"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">  
+               </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2017</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"month"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dayOfMonth"</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"hourOfDay"</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"minute"</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"second"</span><span class="p">:</span><span class="mi">58</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"contacts"</span><span class="p">:[</span><span class="w">  
+               </span><span class="p">{</span><span class="w">  
+                  </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"phoneNumber"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"rawNumber"</span><span class="p">:</span><span class="s2">"+14435401295"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2017</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"month"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"dayOfMonth"</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"hourOfDay"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"minute"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"second"</span><span class="p">:</span><span class="mi">11</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="s2">"address"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"street"</span><span class="p">:</span><span class="s2">"Willowcrest Cir"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"Baltimore"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"state"</span><span class="p">:</span><span class="s2">"MD"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="s2">"21209"</span><span class="p">,</span><span class="w">
+                     </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"United States"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="s2">"gender"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"ageRange"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"lowerBound"</span><span class="p">:{</span><span class="w">  
+                        </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+                     </span><span class="p">},</span><span class="w">
+                     </span><span class="s2">"upperBound"</span><span class="p">:{</span><span class="w">  
+                        </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="s2">"incomeRange"</span><span class="p">:{</span><span class="w">  
+                     </span><span class="s2">"lowerBound"</span><span class="p">:{</span><span class="w">  
+                        </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">60000</span><span class="w">
+                     </span><span class="p">},</span><span class="w">
+                     </span><span class="s2">"upperBound"</span><span class="p">:{</span><span class="w">  
+                        </span><span class="s2">"endpoint"</span><span class="p">:</span><span class="mi">80000</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="s2">"response"</span><span class="p">:</span><span class="s2">"Just a sample response"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"phoneNumber"</span><span class="p">:{</span><span class="w">  
+            </span><span class="s2">"rawNumber"</span><span class="p">:</span><span class="s2">"+15103067053"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="s2">"webHook"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This gets all incoming campaigns in the account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://24b3f761.ngrok.io/api/incoming</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<p>No query parameters are required for this API call.</p>
+
           <h1 id="outgoing-campaigns">Outgoing Campaigns</h1>
 
 <p>The Blast API allows developers to get and send outgoing campaigns. Outgoing campaigns can be used to send targeted text messages to different lists and demographics. We currently support filtering by state, income range, age range, and contact list.</p>
