@@ -190,16 +190,16 @@ ID | The ID of the outgoing campaign to retrieve.
 ```shell
 curl "http://24b3f761.ngrok.io/api/outgoing/delete"
   -u username:key
-  -d "name=Campaign Name&\
-      message=Just a test message&\
-      states=CA,RI&\
-      ageFilter=true&\
-      ageMin=20&\
-      ageMax=40&\
-      incomeFilter=true&\
-      incomeMin=0&\
-      incomeMax=50000&\
-      lists=5&\
+  -d "name=Campaign Name&
+      message=Just a test message&
+      states=CA,RI&
+      ageFilter=true&
+      ageMin=20&
+      ageMax=40&
+      incomeFilter=true&
+      incomeMin=0&
+      incomeMax=50000&
+      lists=5&
 ```
 
 > The above command returns JSON structured like this:
