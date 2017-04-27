@@ -1,4 +1,4 @@
-# Outgoing Campaigns
+# Lists
 
 The Blast API allows developers to create, access, and delete their existing lists. 
 
