@@ -62,7 +62,7 @@ This gets all outgoing campaigns in the account.
 
 `GET http://24b3f761.ngrok.io/api/outgoing`
 
-### Query Parameters
+### URL Parameters
 No query parameters are required for this API call.
 
 <aside class="success">
@@ -180,7 +180,7 @@ This code retrieves a specific outgoing campaign.
 
 ### HTTP Request
 
-`POST http://24b3f761.ngrok.io/api/outgoing/delete`
+`GET http://24b3f761.ngrok.io/api/outgoing/<ID>`
 
 ### URL Parameters
 
@@ -205,11 +205,11 @@ curl "http://24b3f761.ngrok.io/api/outgoing"
 }
 ```
 
-This gets all outgoing campaigns in the account.
+This deletes an outgoing campaign within an account.
 
 ### HTTP Request
 
-`GET http://24b3f761.ngrok.io/api/outgoing`
+`POST http://24b3f761.ngrok.io/api/outgoing/delete`
 
 ### Query Parameters
 
