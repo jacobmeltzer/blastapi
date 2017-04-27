@@ -315,14 +315,14 @@ Parameter | Description
 --------- | -----------
 name | The name of the outgoing campaign.
 message | The message to send.
-states | Comma-seperated list of state-names.
+states[] | Array of state codes to send to.
 ageFilter | Boolean value, true if should filter contacts by age.
 ageMin | Minimum age to send to. Ignored if filtering is false.
 ageMax | Maximum age to send to. Ignored if filtering is false.
 incomeFilter | Boolean value, true if should filter contacts by income.
 incomeMin | Minimum income to send to. Ignored if filtering is false.
 incomeMax | Maximum income to send to. Ignored if filtering is false.
-lists | Comma-seperated list of list IDs to send to
+lists[] | Array of list IDs to send to
 sms | True if should send SMS blast, false for phone call blast.
 timestamp | UNIX timestamp representing time to send the campaign at, or 0 for now.
 
