@@ -317,7 +317,7 @@ You must replace <code>encodedKey</code> with your encoded key.
 
 <p><code class="prettyprint">GET http://24b3f761.ngrok.io/api/outgoing</code></p>
 
-<h3 id="query-parameters">Query Parameters</h3>
+<h3 id="url-parameters">URL Parameters</h3>
 
 <p>No query parameters are required for this API call.</p>
 
@@ -431,7 +431,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://24b3f761.ngrok.io/api/outgoing/delete</code></p>
+<p><code class="prettyprint">GET http://24b3f761.ngrok.io/api/outgoing/&lt;ID&gt;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -460,11 +460,11 @@ Remember — a happy kitten is an authenticated kitten!
    </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Your campaign has been deleted."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This gets all outgoing campaigns in the account.</p>
+<p>This deletes an outgoing campaign within an account.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://24b3f761.ngrok.io/api/outgoing</code></p>
+<p><code class="prettyprint">POST http://24b3f761.ngrok.io/api/outgoing/delete</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
