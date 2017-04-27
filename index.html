@@ -321,10 +321,6 @@ You must replace <code>encodedKey</code> with your encoded key.
 
 <p>No query parameters are required for this API call.</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
 <h2 id="get-a-specific-outgoing-campaign">Get a Specific Outgoing Campaign</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/outgoing/&lt;ID&gt;"</span>
   -u username:key
@@ -447,11 +443,98 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </tbody></table>
 
-<h2 id="delete-outgoing-campaigns">Delete Outgoing Campaigns</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/outgoing"</span>
+<h2 id="create-outgoing-campaigns">Create Outgoing Campaigns</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/outgoing/create"</span>
   -u username:key
   -d <span class="s2">"id=1"</span>
 </code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"error"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Your campaign has been created."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This creates an outgoing campaign within an account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://24b3f761.ngrok.io/api/outgoing/create</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name of the outgoing campaign.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>The message to send.</td>
+</tr>
+<tr>
+<td>states</td>
+<td>Comma-seperated list of state-names.</td>
+</tr>
+<tr>
+<td>ageFilter</td>
+<td>Boolean value, true if should filter contacts by age.</td>
+</tr>
+<tr>
+<td>ageMin</td>
+<td>Minimum age to send to. Ignored if filtering is false.</td>
+</tr>
+<tr>
+<td>ageMax</td>
+<td>Maximum age to send to. Ignored if filtering is false.</td>
+</tr>
+<tr>
+<td>incomeFilter</td>
+<td>Boolean value, true if should filter contacts by income.</td>
+</tr>
+<tr>
+<td>incomeMin</td>
+<td>Minimum income to send to. Ignored if filtering is false.</td>
+</tr>
+<tr>
+<td>incomeMax</td>
+<td>Maximum income to send to. Ignored if filtering is false.</td>
+</tr>
+<tr>
+<td>lists</td>
+<td>Comma-seperated list of list IDs to send to</td>
+</tr>
+<tr>
+<td>sms</td>
+<td>True if should send SMS blast, false for phone call blast.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>UNIX timestamp representing time to send the campaign at.</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-outgoing-campaigns">Delete Outgoing Campaigns</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/outgoing/delete"</span>
+  -u username:key
+  -d <span class="s2">"name=Campaign Name&amp;</span><span class="se">\</span><span class="s2">
+      message=Just a test message&amp;</span><span class="se">\</span><span class="s2">
+      states=CA,RI&amp;</span><span class="se">\</span><span class="s2">
+      ageFilter=true&amp;</span><span class="se">\</span><span class="s2">
+      ageMin=20&amp;</span><span class="se">\</span><span class="s2">
+      ageMax=40&amp;</span><span class="se">\</span><span class="s2">
+      incomeFilter=true&amp;</span><span class="se">\</span><span class="s2">
+      incomeMin=0&amp;</span><span class="se">\</span><span class="s2">
+      incomeMax=50000&amp;</span><span class="se">\</span><span class="s2">
+      lists=5&amp;</span><span class="se">\</span><span class="s2">
+
+</span></code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
