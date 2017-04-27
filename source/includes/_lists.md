@@ -166,3 +166,33 @@ This creates a new contacts list within your account.
 Parameter | Description
 --------- | -----------
 name | The name of the new contacts list
+
+## Delete List
+
+```shell
+curl "http://24b3f761.ngrok.io/api/lists/delete"
+  -u username:key
+  -d "id=6"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+   "error":"",
+   "message":"You have succesfully deleted a list."
+}
+```
+
+
+This deletes a contacts list within your account.
+
+### HTTP Request
+
+`POST http://24b3f761.ngrok.io/api/lists/delete`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+id | The id of the contacts list to delete
