@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
   - lists
+  - incoming
   - outgoing
   - errors
 
