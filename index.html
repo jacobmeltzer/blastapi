@@ -658,7 +658,40 @@ You must replace <code>encodedKey</code> with your encoded key.
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>Contains the ID of the outgoing campaign to delete.</td>
+<td>Contains the ID of the incoming campaign to delete.</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-incoming-campaign">Delete Incoming Campaign</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/incoming/delete"</span>
+  -u username:key
+  -d <span class="s2">"id=1"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"error"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"You have succesfully deleted a campaign."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This deletes an incoming campaign within an account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://24b3f761.ngrok.io/api/incoming/delete</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Contains the ID of the incoming campaign to delete.</td>
 </tr>
 </tbody></table>
 
