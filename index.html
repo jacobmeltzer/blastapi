@@ -381,6 +381,54 @@ You must replace <code>encodedKey</code> with your encoded key.
 </tr>
 </tbody></table>
 
+<h2 id="create-list">Create List</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://24b3f761.ngrok.io/api/lists/create"</span>
+  -u username:key
+  -d <span class="s2">"name=Some list"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"error"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Your contact list has been created!"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"list"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Some list"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:{</span><span class="w">  
+         </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2017</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"month"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"dayOfMonth"</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"hourOfDay"</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"minute"</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"second"</span><span class="p">:</span><span class="mi">51</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"contacts"</span><span class="p">:[</span><span class="w">  
+
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This creates a new contacts list within your account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://24b3f761.ngrok.io/api/lists/create</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name of the new contacts list</td>
+</tr>
+</tbody></table>
+
           <h1 id="outgoing-campaigns">Outgoing Campaigns</h1>
 
 <p>The Blast API allows developers to get and send outgoing campaigns. Outgoing campaigns can be used to send targeted text messages to different lists and demographics. We currently support filtering by state, income range, age range, and contact list.</p>
